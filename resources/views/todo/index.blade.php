@@ -26,8 +26,6 @@
                                         <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">
                                             {{ $todo->todo }}</h3>
                                         <div class="flex">
-                                            <!-- 更新ボタン -->
-                                            <!-- 削除ボタン -->
                                         </div>
                                     </td>
                                 </tr>

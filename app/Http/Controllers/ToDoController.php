@@ -15,7 +15,7 @@ class ToDoController extends Controller
     public function index()
     {
         $todoes = ToDolist::getAllOrderByUpdated_at();
-        return response()->view('todo.index');
+        return response()->view('todo.index', compact('todoes'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ToDoController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'todo' => 'required | max:191',
+            'title' => 'required | max:191',
             'description' => 'required',
         ]);
 
