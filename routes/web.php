@@ -16,7 +16,10 @@ use App\Models\ToDolist;
 |
 */
 
-Route::resource('todo', ToDoController::class);
+Route::middleware('auth')->group(function () {
+    Route::resource('todo', ToDoController::class);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
