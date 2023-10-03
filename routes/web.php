@@ -16,7 +16,6 @@ use App\Models\ToDolist;
 |
 */
 
-Route::get('todo', [ToDoController::class, 'index'])->name(todo . index);
 Route::resource('todo', ToDoController::class);
 Route::get('/', function () {
     return view('welcome');

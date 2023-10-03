@@ -23,8 +23,10 @@
                             @foreach ($todoes as $todo)
                                 <tr class="hover:bg-gray-lighter">
                                     <td class="py-4 px-6 border-b border-gray-light dark:border-gray-600">
-                                        <h3 class="text-left font-bold text-lg text-gray-dark dark:text-gray-200">
-                                            {{ $todo->todo }}</h3>
+                                        <h3 class="text-center font-bold text-lg text-gray-dark dark:text-gray-200">
+                                            {{ $todo->title }}</h3>
+                                        <p class="text-center text-sm text-gray-dark dark:text-gray-400">
+                                            {{ $todo->description }}</p>
                                         <div class="flex">
                                         </div>
                                     </td>
