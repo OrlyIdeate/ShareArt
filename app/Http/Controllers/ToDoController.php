@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
 use Validator;
 use App\Models\ToDolist;
 
@@ -43,7 +43,9 @@ class ToDoController extends Controller
                 ->withErrors($validator);
         }
 
-        $result = ToDolist::create($request->all());
+        $data = $request->merge(['user_id' => Auth::user()->id])->all();
+        $result = ToDolist::create($data);
+
         return redirect()->route('todo.index');
     }
 
