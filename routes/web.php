@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ToDoController;
+use App\Models\ToDolist;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,7 @@ use App\Http\Controllers\ToDoController;
 |
 */
 
+Route::get('todo', [ToDoController::class, 'index'])->name(todo . index);
 Route::resource('todo', ToDoController::class);
 Route::get('/', function () {
     return view('welcome');
